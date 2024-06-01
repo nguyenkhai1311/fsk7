@@ -22,10 +22,28 @@ login.addEventListener('click', () => {
 
 overlay.addEventListener('click', () => {
     modal.style.display = 'none';
+    formLogin.style.display = 'block';
+    formSignup.style.display = 'none';
+    loginEmail.style.borderColor = '';
+    passwordEmail.style.borderColor = '';
+    loginEmail.value = '';
+    passwordEmail.value = '';
+    error.forEach((error) => {
+        error.style.display = 'none';
+    });
 });
 
 iconClose.addEventListener('click', () => {
     modal.style.display = 'none';
+    formLogin.style.display = 'block';
+    formSignup.style.display = 'none';
+    loginEmail.style.borderColor = '';
+    passwordEmail.style.borderColor = '';
+    loginEmail.value = '';
+    passwordEmail.value = '';
+    error.forEach((error) => {
+        error.style.display = 'none';
+    });
 });
 
 iconEyeSlash.addEventListener('click', () => {
@@ -49,26 +67,26 @@ iconEye.addEventListener('click', () => {
 });
 
 tabSignup.addEventListener('click', () => {
-    formSignup.style.display = 'block';
-    formLogin.style.display = 'none';
-    inputEmail.forEach((input) => {
-        input.style.borderColor = '';
-    });
-    inputPassword.forEach((input) => {
-        console.log(123);
-        input.style.borderColor = '';
+    formLogin.style.display = 'block';
+    formSignup.style.display = 'none';
+    loginEmail.style.borderColor = '';
+    passwordEmail.style.borderColor = '';
+    loginEmail.value = '';
+    passwordEmail.value = '';
+    error.forEach((error) => {
+        error.style.display = 'none';
     });
 });
 
 tabLogin.addEventListener('click', () => {
     formLogin.style.display = 'block';
     formSignup.style.display = 'none';
-    inputEmail.forEach((input) => {
-        input.style.borderColor = '';
-    });
-    inputPassword.forEach((input) => {
-        console.log(123);
-        input.style.borderColor = '';
+    loginEmail.style.borderColor = '';
+    passwordEmail.style.borderColor = '';
+    loginEmail.value = '';
+    passwordEmail.value = '';
+    error.forEach((error) => {
+        error.style.display = 'none';
     });
 });
 
