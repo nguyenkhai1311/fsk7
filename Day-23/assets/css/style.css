@@ -98,9 +98,15 @@ body {
     border-radius: 5px;
 }
 
+.authenPass input {
+    width: 87%;
+    padding-right: 40px;
+}
+
 .authenEmail,
 .authenPass,
 .authenName {
+    position: relative;
     margin: 0 0 20px;
 }
 
@@ -142,6 +148,24 @@ body {
 .iconClose {
     position: absolute;
     top: 13px;
+    right: 13px;
+    cursor: pointer;
+}
+
+.iconEye {
+    position: absolute;
+    top: 38px;
+    right: 13px;
+    cursor: pointer;
+}
+
+.iconEye::after {
+    display: none;
+}
+
+.iconEyeSlash {
+    position: absolute;
+    top: 38px;
     right: 13px;
     cursor: pointer;
 }
