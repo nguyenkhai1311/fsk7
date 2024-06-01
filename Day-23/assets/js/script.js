@@ -19,6 +19,11 @@ const inputName = document.querySelector('.inputName');
 const signupEmail = document.querySelector('.signupEmail');
 const signupPassword = document.querySelector('.signupPassword');
 const errorInputName = document.querySelector('.errorInputName');
+const errorSignupInfo = document.querySelector('.errorSignupInfo');
+const errorSignupFormat = document.querySelector('.errorSignupFormat');
+const iconEyeSignUp = document.querySelector('.iconEyeSignUp');
+const iconEyeSlashSignUp = document.querySelector('.iconEyeSlashSignUp');
+const errorPassSignupInfo = document.querySelector('.errorPassSignupInfo');
 
 login.addEventListener('click', () => {
     modal.style.display = 'block';
@@ -70,7 +75,31 @@ iconEye.addEventListener('click', () => {
     }
 });
 
+iconEyeSignUp.addEventListener('click', () => {
+    iconEyeSignUp.style.display = 'none';
+    iconEyeSlashSignUp.style.display = 'block';
+    if (signupPassword.type === 'password') {
+        signupPassword.type = 'text';
+    } else {
+        signupPassword.type = 'password';
+    }
+});
+
+iconEyeSlashSignUp.addEventListener('click', () => {
+    iconEyeSlashSignUp.style.display = 'none';
+    iconEyeSignUp.style.display = 'block';
+    if (signupPassword.type === 'password') {
+        signupPassword.type = 'text';
+    } else {
+        signupPassword.type = 'password';
+    }
+});
+
 tabSignup.addEventListener('click', () => {
+    tabSignup.style.color = '#fff';
+    tabSignup.style.backgroundColor = '#1a7900';
+    tabLogin.style.color = '#808080';
+    tabLogin.style.backgroundColor = '#eeeeee';
     formLogin.style.display = 'none';
     formSignup.style.display = 'block';
     loginEmail.style.borderColor = '';
@@ -83,6 +112,10 @@ tabSignup.addEventListener('click', () => {
 });
 
 tabLogin.addEventListener('click', () => {
+    tabLogin.style.color = '#fff';
+    tabLogin.style.backgroundColor = '#1a7900';
+    tabSignup.style.color = '#808080';
+    tabSignup.style.backgroundColor = '#eeeeee';
     formLogin.style.display = 'block';
     formSignup.style.display = 'none';
     loginEmail.style.borderColor = '';
@@ -224,18 +257,18 @@ formSignup.addEventListener('submit', (e) => {
     if (signupEmail.value === '') {
         e.preventDefault();
         signupEmail.style.borderColor = 'red';
-        if (signupEmail.value === '') {
-            signupEmail.style.borderColor = 'red';
+        if (signupPassword.value === '') {
+            signupPassword.style.borderColor = 'red';
             error.forEach((error) => {
-                errorEmailInfo.style.display = 'block';
-                errorPasswordInfo.style.display = 'block';
+                errorSignupInfo.style.display = 'block';
+                errorPassSignupInfo.style.display = 'block';
                 errorEmailFormat.style.display = 'none';
             });
         } else {
             signupEmail.style.borderColor = 'green';
             error.forEach((error) => {
-                errorEmailInfo.style.display = 'block';
-                errorPasswordInfo.style.display = 'none';
+                errorSignupInfo.style.display = 'block';
+                errorPassSignupInfo.style.display = 'none';
                 errorEmailFormat.style.display = 'none';
             });
         }
@@ -252,6 +285,12 @@ formSignup.addEventListener('submit', (e) => {
 inputName.addEventListener('blur', () => {
     if (inputName.value === '') {
         inputName.style.borderColor = 'red';
+        if (signupEmail.value === '') {
+            signupEmail.style.borderColor = 'red';
+            error.forEach((error) => {
+                errorInputName.style.display = 'none';
+            });
+        }
         error.forEach((error) => {
             errorInputName.style.display = 'none';
         });
@@ -269,5 +308,66 @@ inputName.addEventListener('keyup', () => {
         error.forEach((error) => {
             errorInputName.style.display = 'block';
         });
+    }
+});
+
+signupEmail.addEventListener('blur', () => {
+    if (signupEmail.value === '') {
+        signupEmail.style.borderColor = 'red';
+        if (passwordEmail.value === '') {
+            passwordEmail.style.borderColor = 'red';
+            error.forEach((error) => {
+                errorSignupInfo.style.display = 'block';
+                errorPasswordInfo.style.display = 'block';
+                errorSignupFormat.style.display = 'none';
+            });
+        } else {
+            passwordEmail.style.borderColor = 'green';
+            error.forEach((error) => {
+                errorSignupInfo.style.display = 'block';
+                errorPasswordInfo.style.display = 'none';
+                errorSignupFormat.style.display = 'none';
+            });
+        }
+    } else {
+        if (!validateEmail(signupEmail.value)) {
+            error.forEach((error) => {
+                errorEmailInfo.style.display = 'none';
+                errorEmailFormat.style.display = 'block';
+            });
+            if (passwordEmail.value === '') {
+                passwordEmail.style.borderColor = 'red';
+                error.forEach((error) => {
+                    errorPasswordInfo.style.display = 'block';
+                });
+            }
+        } else {
+            signupEmail.style.borderColor = 'green';
+            error.forEach((error) => {
+                errorEmailInfo.style.display = 'none';
+                errorEmailFormat.style.display = 'none';
+            });
+        }
+    }
+});
+
+signupEmail.addEventListener('keyup', () => {
+    if (signupEmail.value === '') {
+        error.forEach((error) => {
+            errorEmailInfo.style.display = 'block';
+            errorEmailFormat.style.display = 'none';
+        });
+    } else {
+        if (!validateEmail(signupEmail.value)) {
+            error.forEach((error) => {
+                errorEmailInfo.style.display = 'none';
+                errorEmailFormat.style.display = 'block';
+            });
+        } else {
+            error.forEach((error) => {
+                errorEmailInfo.style.display = 'none';
+                errorEmailFormat.style.display = 'none';
+            });
+        }
     }
 });

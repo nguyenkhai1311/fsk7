@@ -156,20 +156,19 @@ body {
     cursor: pointer;
 }
 
-.iconEye {
+.iconEye,
+.iconEyeSignUp {
+    display: none;
     position: absolute;
-    top: 38px;
+    top: 34px;
     right: 13px;
     cursor: pointer;
 }
 
-.iconEye::after {
-    display: none;
-}
-
-.iconEyeSlash {
+.iconEyeSlash,
+.iconEyeSlashSignUp {
     position: absolute;
-    top: 38px;
+    top: 34px;
     right: 13px;
     cursor: pointer;
 }

@@ -46,8 +46,13 @@
                             class="passwordEmail"
                         />
                         <div class="icon">
-                            <i class="fa-solid fa-eye iconEye"></i>
-                            <i class="fa-solid fa-eye-slash iconEyeSlash"></i>
+                            <div class="iconEye">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+
+                            <div class="iconEyeSlash">
+                                <i class="fa-solid fa-eye-slash"></i>
+                            </div>
                         </div>
                         <span class="error errorPasswordInfo">
                             Vui lòng nhập thông tin
@@ -82,10 +87,10 @@
                             placeholder="Email"
                             class="signupEmail"
                         />
-                        <span class="error errorEmailInfo">
+                        <span class="error errorSignupInfo">
                             Vui lòng nhập thông tin
                         </span>
-                        <span class="error errorEmailFormat">
+                        <span class="error errorSignupFormat">
                             Vui lòng nhập đúng định dạng email
                         </span>
                     </div>
@@ -97,9 +102,23 @@
                             placeholder="Mật khẩu"
                             class="signupPassword"
                         />
-                        <i class="fa-solid fa-eye iconEye"></i>
-                        <i class="fa-solid fa-eye-slash iconEyeSlash"></i>
-                        <span class="error">Vui lòng nhập thông tin</span>
+                        <div class="icon">
+                            <div class="iconEyeSignUp">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+
+                            <div class="iconEyeSlashSignUp">
+                                <i class="fa-solid fa-eye-slash"></i>
+                            </div>
+                        </div>
+
+                        <span class="error errorPassSignupInfo">
+                            Vui lòng nhập thông tin
+                        </span>
+
+                        <span class="error errorPasswordLength">
+                            Vui lòng nhập mật khẩu từ 6 - 12 ký tự
+                        </span>
                     </div>
                     <div class="btn">
                         <button class="btnSignup">Đăng ký</button>
