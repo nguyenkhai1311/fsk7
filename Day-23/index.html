@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dân trí</title>
+
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css" />
+    </head>
+    <body>
+        <button class="login">Đăng nhập</button>
+
+        <div class="modal">
+            <div class="authen">
+                <div class="authenHeader">
+                    <img src="./assets/image/dantri.png" alt="Dân trí" />
+                    <i class="fa-solid fa-close fa-2x iconClose"></i>
+                </div>
+                <div class="authenBtn">
+                    <button class="tabLogin">Đăng nhập</button>
+                    <button class="tabSignup">Đăng ký</button>
+                </div>
+                <form action="" class="formLogin">
+                    <div class="authenEmail">
+                        <label for="">Email</label>
+                        <input
+                            type="text"
+                            id="emailLogin"
+                            placeholder="Email"
+                            class="inputEmail loginEmail"
+                        />
+                        <span class="error errorEmailInfo">
+                            Vui lòng nhập thông tin
+                        </span>
+                        <span class="error errorEmailFormat">
+                            Vui lòng nhập đúng định dạng email
+                        </span>
+                    </div>
+                    <div class="authenPass">
+                        <label for="">Mật khẩu</label>
+                        <input
+                            type="password"
+                            id="passwordLogin"
+                            placeholder="Mật khẩu"
+                            class="inputPassword passwordEmail"
+                        />
+                        <span class="error errorPasswordInfo">
+                            Vui lòng nhập thông tin
+                        </span>
+                    </div>
+                    <div class="btn">
+                        <button class="btnLogin">Đăng nhập</button>
+                    </div>
+                </form>
+
+                <form action="" class="formSignup">
+                    <p class="desc">
+                        Hoàn thành đăng ký, và bắt đầu trải nghiệm ngay!
+                    </p>
+                    <div class="authenName">
+                        <label for="">Họ và tên</label>
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Họ và tên"
+                            class="inputName"
+                        />
+                        <span class="error">Vui lòng nhập thông tin</span>
+                    </div>
+                    <div class="authenEmail">
+                        <label for="">Email</label>
+                        <input
+                            type="text"
+                            id="emailSignup"
+                            placeholder="Email"
+                            class="inputEmail"
+                        />
+                        <span class="error">Vui lòng nhập thông tin</span>
+                    </div>
+                    <div class="authenPass">
+                        <label for="">Mật khẩu</label>
+                        <input
+                            type="password"
+                            id="passwordSignup"
+                            placeholder="Mật khẩu"
+                            class="inputPassword"
+                        />
+                        <span class="error">Vui lòng nhập thông tin</span>
+                    </div>
+                    <div class="btn">
+                        <button class="btnSignup">Đăng ký</button>
+                    </div>
+                </form>
+            </div>
+            <div class="overlay"></div>
+        </div>
+
+        <script src="./assets/js/validateEmail.js"></script>
+        <script src="./assets/js/script.js"></script>
+    </body>
+</html>

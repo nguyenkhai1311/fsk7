@@ -1,0 +1,147 @@
+:root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, Ubuntu, Cantarell, 'Open Sans',
+        'Helvetica Neue', sans-serif;
+}
+
+.modal .overlay {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal .authen {
+    display: block;
+    position: fixed;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 440px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal .authenHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+    padding: 20px;
+}
+
+.modal .authenHeader img {
+    height: 28px;
+}
+
+.modal .authenBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .tabLogin,
+.modal .tabSignup {
+    display: block;
+    width: 50%;
+    padding: 14px 0;
+    background-color: #1a7900;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.modal .tabSignup {
+    background-color: #eeeeee;
+    color: #808080;
+}
+
+.formLogin,
+.formSignup {
+    display: block;
+    margin: 0;
+    padding: 0;
+    padding: 20px 20px 10px;
+}
+
+.authenEmail label,
+.authenPass label,
+.authenName label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.authenEmail input,
+.authenPass input,
+.authenName input {
+    display: block;
+    width: 95%;
+    margin: 7px 0 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.authenEmail,
+.authenPass,
+.authenName {
+    margin: 0 0 20px;
+}
+
+.btn {
+    padding: 20px;
+}
+
+.btnLogin,
+.btnSignup {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    background-color: #1a7900;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.formSignup {
+    display: none;
+}
+
+.desc {
+    margin: 0 0 20px;
+    padding: 0;
+    width: 100%;
+    font-size: 14px;
+}
+
+.error {
+    display: none;
+    color: #ff0000;
+    font-style: italic;
+}
+
+.iconClose {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    cursor: pointer;
+}
