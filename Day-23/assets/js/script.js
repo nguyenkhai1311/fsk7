@@ -15,6 +15,10 @@ const passwordEmail = document.querySelector('.passwordEmail');
 const btnSignup = document.querySelector('.btnSignup');
 const iconEyeSlash = document.querySelector('.iconEyeSlash');
 const iconEye = document.querySelector('.iconEye');
+const inputName = document.querySelector('.inputName');
+const signupEmail = document.querySelector('.signupEmail');
+const signupPassword = document.querySelector('.signupPassword');
+const errorInputName = document.querySelector('.errorInputName');
 
 login.addEventListener('click', () => {
     modal.style.display = 'block';
@@ -67,8 +71,8 @@ iconEye.addEventListener('click', () => {
 });
 
 tabSignup.addEventListener('click', () => {
-    formLogin.style.display = 'block';
-    formSignup.style.display = 'none';
+    formLogin.style.display = 'none';
+    formSignup.style.display = 'block';
     loginEmail.style.borderColor = '';
     passwordEmail.style.borderColor = '';
     loginEmail.value = '';
@@ -204,6 +208,66 @@ formLogin.addEventListener('submit', (e) => {
         error.forEach((error) => {
             errorEmailInfo.style.display = 'none';
             errorEmailFormat.style.display = 'block';
+        });
+    }
+});
+
+formSignup.addEventListener('submit', (e) => {
+    if (inputName.value === '') {
+        e.preventDefault();
+        inputName.style.borderColor = 'red';
+        error.forEach((error) => {
+            errorInputName.style.display = 'block';
+        });
+    }
+
+    if (signupEmail.value === '') {
+        e.preventDefault();
+        signupEmail.style.borderColor = 'red';
+        if (signupEmail.value === '') {
+            signupEmail.style.borderColor = 'red';
+            error.forEach((error) => {
+                errorEmailInfo.style.display = 'block';
+                errorPasswordInfo.style.display = 'block';
+                errorEmailFormat.style.display = 'none';
+            });
+        } else {
+            signupEmail.style.borderColor = 'green';
+            error.forEach((error) => {
+                errorEmailInfo.style.display = 'block';
+                errorPasswordInfo.style.display = 'none';
+                errorEmailFormat.style.display = 'none';
+            });
+        }
+    } else if (!validateEmail(signupEmail.value)) {
+        e.preventDefault();
+        signupEmail.style.borderColor = 'red';
+        error.forEach((error) => {
+            errorEmailInfo.style.display = 'none';
+            errorEmailFormat.style.display = 'block';
+        });
+    }
+});
+
+inputName.addEventListener('blur', () => {
+    if (inputName.value === '') {
+        inputName.style.borderColor = 'red';
+        error.forEach((error) => {
+            errorInputName.style.display = 'none';
+        });
+    } else {
+        inputName.style.borderColor = 'green';
+    }
+});
+
+inputName.addEventListener('keyup', () => {
+    if (inputName.value !== '') {
+        error.forEach((error) => {
+            errorInputName.style.display = 'none';
+        });
+    } else {
+        error.forEach((error) => {
+            errorInputName.style.display = 'block';
         });
     }
 });

@@ -9,6 +9,10 @@ body {
         'Helvetica Neue', sans-serif;
 }
 
+.modal {
+    display: none;
+}
+
 .modal .overlay {
     position: fixed;
     z-index: 1;

@@ -70,7 +70,9 @@
                             placeholder="Họ và tên"
                             class="inputName"
                         />
-                        <span class="error">Vui lòng nhập thông tin</span>
+                        <span class="error errorInputName"
+                            >Vui lòng nhập thông tin</span
+                        >
                     </div>
                     <div class="authenEmail">
                         <label for="">Email</label>
@@ -78,9 +80,14 @@
                             type="text"
                             id="emailSignup"
                             placeholder="Email"
-                            class="inputEmail"
+                            class="signupEmail"
                         />
-                        <span class="error">Vui lòng nhập thông tin</span>
+                        <span class="error errorEmailInfo">
+                            Vui lòng nhập thông tin
+                        </span>
+                        <span class="error errorEmailFormat">
+                            Vui lòng nhập đúng định dạng email
+                        </span>
                     </div>
                     <div class="authenPass">
                         <label for="">Mật khẩu</label>
@@ -88,7 +95,7 @@
                             type="password"
                             id="passwordSignup"
                             placeholder="Mật khẩu"
-                            class="inputPassword"
+                            class="signupPassword"
                         />
                         <i class="fa-solid fa-eye iconEye"></i>
                         <i class="fa-solid fa-eye-slash iconEyeSlash"></i>
