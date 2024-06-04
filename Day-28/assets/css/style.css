@@ -86,3 +86,15 @@ body {
     align-items: center;
     gap: 1.5rem;
 }
+
+.todoInputAdd {
+    background: none;
+    border: 1px solid #8758ff;
+    color: #fff;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    outline: none;
+    padding: 1rem;
+    width: 300px;
+    font-size: 1.4rem;
+}
