@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.carousel {
+    position: relative;
+    height: 500px;
+    overflow-x: hidden;
+}
+
+.imgCarousel {
+    display: flex;
+    height: 500px;
+    transition: all ease 0.75s;
+}
+
+.imgCarousel img {
+    width: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.dots {
+    position: absolute;
+    display: flex;
+    gap: 10px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.triangle .icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    color: #fff;
+    background-color: #6363637d;
+    padding: 10px;
+}
+
+.active {
+    background-color: #ffa500;
+    pointer-events: none;
+}
+
+.iconRight {
+    position: absolute;
+    right: 20px;
+}
+
+.iconLeft {
+    position: absolute;
+    left: 20px;
+}
