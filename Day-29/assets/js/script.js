@@ -7,9 +7,10 @@ var dots = document.querySelectorAll('.dot');
 
 var count = 0;
 var widthCarousel = imgCarousel.clientWidth;
-var initialOffsetX = 0;
+var initialX = 0;
 var initialTransform = 0;
 var widthImg = 0;
+var initialWidth = 0;
 
 iconLeft.addEventListener('click', function () {
     if (count >= 1) {
@@ -17,7 +18,6 @@ iconLeft.addEventListener('click', function () {
         console.log(count);
         count--;
         widthImg += widthCarousel;
-        console.log(widthImg);
         dot.children[count].classList.add('active');
         imgCarousel.style.transform = `translateX(${widthImg}px)`;
 
@@ -57,46 +57,67 @@ dots.forEach((item, index) => {
     });
 });
 
-imgs.forEach((img) => {
-    img.addEventListener('mousedown', function (e) {
-        e.preventDefault();
-        initialOffsetX = e.clientX;
-        document.body.addEventListener('mousemove', handleDrag);
-    });
+// imgs.forEach((img) => {
+//     img.addEventListener('mousedown', function (e) {
+//         e.preventDefault();
+//         // initialX = -e.clientX - widthCarousel * count;
+//         initialX = e.clientX;
+//         document.body.addEventListener('mousemove', handleDrag);
+//     });
 
-    img.addEventListener('mouseup', function (e) {
-        img.style.cursor = 'default';
-        widthImg = widthCarousel * (count - 1);
-        console.log('width', widthImg);
-        console.log('client', e.clientX);
-        console.log('initial', initialTransform);
-        if (e.clientX > widthImg) {
-            imgCarousel.style.transform = `translateX(${widthImg}px)`;
-            imgCarousel.style.transition = 'all ease 0.75s';
-        } else {
-            // initialTransform =
-            //     initialOffsetX - e.clientX + widthCarousel * count;
-            imgCarousel.style.transform = `translateX(-${widthImg}px)`;
-            imgCarousel.style.transition = 'all ease 0.75s';
-        }
-        document.body.removeEventListener('mousemove', handleDrag);
-    });
+//     img.addEventListener('mouseup', function (s) {
+//         // img.style.cursor = 'default';
+//         // initialWidth = -widthCarousel * (count + 1);
+//         // const widthSlider = s.clientX - initialX;
+//         // var dotActive = document.querySelector('.dot.active');
 
-    var handleDrag = (e) => {
-        img.style.cursor = 'move';
-        widthImg = widthCarousel * count;
-        console.log(widthImg);
-        console.log(e.clientX);
-        if (e.clientX > widthImg) {
-            initialTransform =
-                e.clientX - initialOffsetX - widthCarousel * count;
-            imgCarousel.style.transform = `translateX(${initialTransform}px)`;
-            imgCarousel.style.transition = 'none';
-        } else {
-            initialTransform =
-                initialOffsetX - e.clientX + widthCarousel * count;
-            imgCarousel.style.transform = `translateX(-${initialTransform}px)`;
-            imgCarousel.style.transition = 'none';
-        }
-    };
-});
+//         // if (-widthSlider > (widthImg + initialWidth) / 2) {
+//         //     if (count >= 1) {
+//         //         console.log(count);
+//         //         console.log('Đẩy vào');
+//         //         imgCarousel.style.transform = `translateX(${
+//         //             widthImg - widthCarousel * (count + 1)
+//         //         }px)`;
+//         //         imgCarousel.style.transition = 'all ease 0.75s';
+
+//         //         count--;
+//         //         dot.children[count].classList.add('active');
+
+//         //         if (dotActive) {
+//         //             dotActive.classList.remove('active');
+//         //         }
+//         //     } else {
+//         //         imgCarousel.style.transform = `translateX(${widthImg}px)`;
+//         //         imgCarousel.style.transition = 'all ease 0.75s';
+//         //     }
+//         // } else {
+//         // }
+
+//         document.body.removeEventListener('mousemove', handleDrag);
+//     });
+
+//     var handleDrag = (s) => {
+//         // img.style.cursor = 'move';
+//         // initialWidth = -widthCarousel * (count + 1);
+//         // const widthSlider = s.clientX - initialX - widthCarousel * count;
+//         // imgCarousel.style.transform = `translateX(${widthSlider}px)`;
+//         // imgCarousel.style.transition = 'none';
+//         // if (-widthSlider < (widthImg + initialWidth) / 2) {
+//         //     if (count >= 1) {
+//         //         console.log('Đẩy vào');
+//         //         imgCarousel.style.transform = `translateX(${
+//         //             widthImg - widthCarousel * (count + 1)
+//         //         }px)`;
+//         //         imgCarousel.style.transition = 'all ease 0.75s';
+//         //         count--;
+//         //         dot.children[count].classList.add('active');
+//         //         if (dotActive) {
+//         //             dotActive.classList.remove('active');
+//         //         }
+//         //     } else {
+//         //         imgCarousel.style.transform = `translateX(${widthImg}px)`;
+//         //         imgCarousel.style.transition = 'all ease 0.75s';
+//         //     }
+//         // }
+//     };
+// });
