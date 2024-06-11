@@ -29,3 +29,12 @@ body {
 .btnSpeak:hover {
     background-color: green;
 }
+
+.result {
+    display: none;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: rgb(17, 176, 17);
+}
