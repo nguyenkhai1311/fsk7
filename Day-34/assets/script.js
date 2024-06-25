@@ -5,8 +5,14 @@ let dragged = null;
 listItem.forEach((item) => {
     item.addEventListener('dragstart', (e) => {
         dragged = e.target;
+        setTimeout(() => {
+            item.classList.add('dragging');
+        }, 0);
+    });
 
-        item.classList.add('dragging');
+    item.addEventListener('dragend', () => {
+        dragged = null;
+        item.classList.remove('dragging');
     });
 
     item.addEventListener('dragover', (e) => {
