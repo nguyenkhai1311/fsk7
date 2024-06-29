@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Doc Editor</title>
+
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <h1>Doc Editor</h1>
+        <hr />
+        <div class="controls">
+            <div class="main-control">
+                <div class="btn-file">
+                    <div class="text-file">File v</div>
+                    <div class="btn-save active">
+                        <button class="btn-new">New</button>
+                        <button class="btn-txt">Save as TXT</button>
+                        <button class="btn-pdf">Save as PDF</button>
+                    </div>
+                </div>
+                <input class="name-file" type="text" value="untitled" />
+            </div>
+            <div class="control-btn">
+                <button class="btn btn-strong"><b>b</b></button>
+                <button class="btn btn-underline"><u>u</u></button>
+                <button class="btn btn-italic"><i>i</i></button>
+                <input type="color" class="btn-color" />
+            </div>
+        </div>
+        <div id="content" class="content" contenteditable="true"></div>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+            integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script src="./script.js"></script>
+    </body>
+</html>
