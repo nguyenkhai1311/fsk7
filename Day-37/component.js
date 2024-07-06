@@ -36,7 +36,7 @@ class F8 {
                             button.addEventListener('click', () => {
                                 const method =
                                     button.getAttribute('v-on:click');
-                                this[method]();
+                                this.executeMethod(method);
                                 this.render();
                             });
                         }
@@ -44,23 +44,26 @@ class F8 {
                             button.addEventListener('dblclick', () => {
                                 const method =
                                     button.getAttribute('v-on:dblclick');
-                                this[method]();
+                                this.executeMethod(method);
                                 this.render();
                             });
                         }
                     });
                 }
 
-                ['count++']() {
-                    this.state.count++;
-                }
-
-                ['count--']() {
-                    this.state.count--;
-                }
-
-                ['title="Hello F8"']() {
-                    this.state.title = 'Hello F8';
+                executeMethod(method) {
+                    if (method.includes('++')) {
+                        const key = method.replace('++', '').trim();
+                        this.state[key]++;
+                    } else if (method.includes('--')) {
+                        const key = method.replace('--', '').trim();
+                        this.state[key]--;
+                    } else if (method.includes('=')) {
+                        const [key, value] = method
+                            .split('=')
+                            .map((s) => s.trim());
+                        this.state[key] = value.replace(/['"]/g, ''); // Remove quotes
+                    }
                 }
             }
         );
